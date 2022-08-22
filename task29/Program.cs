@@ -1,21 +1,36 @@
 ﻿// Задача 29: Напишите программу, которая 
 // 1. задаёт массив из 8 элементов и 
 // 2.выводит их на экран.
-// 1, 2, 5, 7, 19, 6, 1, 33 -> [1, 2, 5, 7, 19, 6, 1, 33]
+
+
 Console.Clear();
+Console.WriteLine("Введите размер массива: ");
+int lenght = Convert.ToInt32(Console.ReadLine());
 
-int[] arr = { 1, 2, 5, 7, 19, 6, 1, 33 };
-
-void PrintArray(int[] array)
+int[] CreateArray(int len)
 {
-    int count = array.Length;
-    Console.Write("[ ");
-    for (int i = 0; i < count; i++)
+    int[] arrays = new int[len];
+    for (int i = 0; i < arrays.Length; i++)
     {
-        Console.Write($"{array[i]} ");
+        Console.WriteLine($"Введите {i + 1} элемент массива");
+        arrays[i] = Convert.ToInt32(Console.ReadLine());
     }
-    Console.Write("]");
-
-    Console.WriteLine();
+    return arrays;
 }
-PrintArray(arr);
+int[] result = CreateArray(lenght);
+
+void PrintArray(int[] result1)
+{
+    Console.Write($"[ ");
+    for (int i = 0; i < result1.Length; i++)
+    {
+        Console.Write($"{result1[i]} ");
+    }
+    Console.Write($"]");
+}
+
+PrintArray(result);
+
+
+
+
